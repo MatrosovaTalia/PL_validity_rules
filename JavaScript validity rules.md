@@ -66,3 +66,9 @@
    There is a list of reserved words that cannot be used as variable names because they are used by the language itself.
    
    If we do not include “use strict” we can define the variable just assigning the value to it. Else we had to define it using ‘let’.
+
+### Operators
+
+1. Increment/decrement
+
+Only applicable to the variables. Attempt to apply, for example to 5++ will cause an error.
