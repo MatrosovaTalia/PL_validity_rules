@@ -4,18 +4,24 @@
 
 1. **Ternary operator**
 
+```javascript
+let result = condition ? Val1 : Val2;
+```
+
    Val1 and val2 must return something since no continue or break could be used in this structure.
 
 ### Loops
 
 1. **for** (start; condition; step) 
 
-	for (;;) {
-      // infinitely
+```javascript
+for (;;) {
+// infinitely
    }
-   ; must be included or will through error
+```
+- ; must be included or will through error
 
-   The ‘start’ and ‘step’ parts should be valid
+- The ‘start’ and ‘step’ parts should be valid
 
 ### Labels for break/continue statements
 
