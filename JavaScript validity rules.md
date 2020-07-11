@@ -74,26 +74,33 @@ If we put one dot: 123456.toString (36), then this will be a mistake because the
 
 3. Strings
 
-1. Multiple strings
+	1. Multiple strings
 
 Another advantage of backquotes(``) is that they can occupy more than one line. But if you try to use single or double quotes in exactly the same way, there will be an error:
 let guestList = "Guests: // Error
   * John";
-2. Pattern function
+	2. Pattern function
 
 Backquotes(``) also allow you to specify a “pattern function” before the first backtick.  Using single or double quotes will cause an error.
 
-3. Special characters
+	3. Special characters
 
 Include special characters where they are needed otherwise an error will be thrown.
 alert( 'I\'m the Walrus!' ); // I'm the Walrus!
 
-4. Length is a property  
+	4. Length is a property  
 
 Do not call like a function( .length() )
 
-5. Strings are immutable
+	5. Strings are immutable
 
 The contents of the string in JavaScript cannot be changed. You cannot take the symbol in the middle and replace it. As soon as a line is created, it is so forever.
+
+4. WeakMap
+Keys must be objects, not primitive types as it possible in ordinary Map
+
+```
+weakMap.set("test", "Whoops"); // Ошибка, потому что "test" не объект
+```
 
 
