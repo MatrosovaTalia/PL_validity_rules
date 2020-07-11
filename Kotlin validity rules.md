@@ -53,31 +53,12 @@ class Square() : Rectangle(), Polygon {
 ```
 
 10. If the property is declared as read-only `val`, it is invalid to change its value.
-
 11. It is valid to mark a compile time constant with `const` modifier if the property is :
-
     * Top-level, or member of an object declaration or a companion object;
     * Initialized with a value of type String or a primitive type;
     * there is no custom getter.
-
-12. Implicit widening is invalid. One cannot call a function, that expects Double, with Int or Float without explicit cast to Double.
-
-    ``` kotlin
-    fun main() {
-        fun printDouble(d: Double) { print(d) }
-    	val i = 1    
-    	val d = 1.1
-    	val f = 1.1f 
-    
-    	printDouble(d)
-    //    printDouble(i) // Error: Type mismatch
-    //    printDouble(f) // Error: Type mismatch
-    }
-    ```
-
-13. Interfaces can contain declarations for abstract methods as well as method implementations. 
-
-14. If the class derives from multiple interfaces it must implement all methods, that are inherited from multiple interfaces. Even if a method has only one implementation among the interfaces.
+12. Interfaces can contain declarations for abstract methods as well as method implementations. 
+13. If the class derives from multiple interfaces it must implement all methods, that are inherited from multiple interfaces. Even if a method has only one implementation among the interfaces.
 
 ``` kotlin
 interface A {
@@ -105,6 +86,33 @@ class C : A, B {
 Although method bar() has only implementation in interface B and declaration only in interface A, class C, that derives from A and B must implement it.
 
 15. Visibility modifiers are not valid for local variables, functions and classes.
+
+### Functions
+
+16. Implicit widening is invalid. One cannot call a function, that expects Double, with Int or Float without explicit cast to Double.
+
+    ``` kotlin
+    fun main() {
+        fun printDouble(d: Double) { print(d) }
+    	val i = 1    
+    	val d = 1.1
+    	val f = 1.1f 
+    
+    	printDouble(d)
+    //    printDouble(i) // Error: Type mismatch
+    //    printDouble(f) // Error: Type mismatch
+    }
+    ```
+
+17. The return type of a function cannot be omitted unless it is `Unit`.
+
+18. Tail recursion modifier `tailrec` is valid if the function calls itself as the last operation it performs. `tailrec` modifier is invalid if `try/catch/finally` blocks are used inside the function.
+
+19. It is possible to use `_` for unused lambda parameter.
+
+20. 
+
+ 
 
 
 
